@@ -161,7 +161,7 @@
   
   /* Project card component */
   .project-card {
-    @apply group relative bg-card border border-card-border transition-all duration-150;
+    @apply relative bg-card border border-card-border transition-all duration-150;
     @apply hover:border-accent hover:shadow-sm;
   }
   
