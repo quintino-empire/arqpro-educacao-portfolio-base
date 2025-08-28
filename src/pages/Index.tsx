@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import EditGuide from "@/components/EditGuide";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
         <About />
         <Process />
         <Contact />
-        <EditGuide />
       </main>
       <Footer />
     </div>
