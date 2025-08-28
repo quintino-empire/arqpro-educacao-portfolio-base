@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Architectural Design System - Minimalista Contemporâneo */
 
 @layer base {
   :root {
+    /* Base colors - Clean architectural palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 6.7%;
+    
+    /* Text hierarchy */
+    --text-primary: 0 0% 6.7%;
+    --text-secondary: 0 0% 42%;
+    --text-muted: 0 0% 60%;
+    
+    /* Structural elements */
+    --border: 0 0% 90.2%;
+    --border-light: 0 0% 94.5%;
+    --line: 0 0% 90.2%;
+    
+    /* Accent color - Architectural blue */
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 213 94% 95%;
+    
+    /* Interactive states */
+    --hover: 0 0% 96%;
+    --focus: 213 94% 68%;
+    
+    /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --card-foreground: 0 0% 6.7%;
+    --card-border: 0 0% 90.2%;
+    
+    /* Form elements */
+    --input: 0 0% 100%;
+    --input-border: 0 0% 90.2%;
+    --input-focus: 213 94% 68%;
+    
+    /* Semantic colors */
+    --primary: 0 0% 6.7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 6.7%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --destructive-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6.7%;
+    --ring: 213 94% 68%;
+    
+    /* Spacing system - 8px baseline */
+    --space-1: 0.5rem;   /* 8px */
+    --space-2: 1rem;     /* 16px */
+    --space-3: 1.5rem;   /* 24px */
+    --space-4: 2rem;     /* 32px */
+    --space-6: 3rem;     /* 48px */
+    --space-8: 4rem;     /* 64px */
+    --space-12: 6rem;    /* 96px */
+    --space-16: 8rem;    /* 128px */
+    
+    /* Border radius */
+    --radius: 0.25rem;   /* 4px - minimal architectural */
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +127,80 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Typography scales - Architectural hierarchy */
+  h1 {
+    @apply text-4xl md:text-5xl font-light leading-tight tracking-tight;
+  }
+  
+  h2 {
+    @apply text-xl md:text-2xl font-light leading-tight;
+  }
+  
+  h3 {
+    @apply text-lg md:text-xl font-normal leading-tight;
+  }
+  
+  /* Smooth transitions */
+  a, button, [role="button"] {
+    @apply transition-all duration-150;
+  }
+}
+
+/* Architectural grid system */
+@layer components {
+  .container-grid {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
+  .grid-12 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  /* Project card component */
+  .project-card {
+    @apply group relative bg-card border border-card-border transition-all duration-150;
+    @apply hover:border-accent hover:shadow-sm;
+  }
+  
+  .project-card-image {
+    @apply aspect-[3/2] overflow-hidden bg-muted;
+  }
+  
+  .project-card-content {
+    @apply p-4 md:p-6;
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 font-medium;
+    @apply hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-focus;
+  }
+  
+  .btn-secondary {
+    @apply border border-border text-foreground px-6 py-3 font-medium;
+    @apply hover:bg-hover focus:outline-none focus:ring-2 focus:ring-focus;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-6 py-3 font-medium;
+    @apply hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-focus;
+  }
+  
+  /* Form elements */
+  .input-field {
+    @apply w-full px-4 py-3 bg-input border border-input-border;
+    @apply focus:outline-none focus:border-input-focus focus:ring-1 focus:ring-input-focus;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-padding-sm {
+    @apply py-8 md:py-12;
   }
 }

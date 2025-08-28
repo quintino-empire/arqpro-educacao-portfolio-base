@@ -3,18 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>studio-spatial-grid</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>{{NOME_DO_ESCRITORIO}} — Arquitetura — {{CIDADE_UF}}</title>
+    <meta name="description" content="{{SEO_DESCRIPTION}}" />
+    <meta name="author" content="{{NOME_DO_ESCRITORIO}}" />
+    <link rel="canonical" href="/" />
 
-    <meta property="og:title" content="studio-spatial-grid" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{NOME_DO_ESCRITORIO}} — Arquitetura — {{CIDADE_UF}}" />
+    <meta property="og:description" content="{{SEO_DESCRIPTION}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="/" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="{{NOME_DO_ESCRITORIO}} — Arquitetura" />
+    <meta name="twitter:description" content="{{SEO_DESCRIPTION}}" />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{NOME_DO_ESCRITORIO}}",
+      "url": "/",
+      "logo": "/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{CIDADE_UF}}"
+      },
+      "sameAs": [
+        "{{LINK_IG}}",
+        "{{LINK_WHATS}}"
+      ]
+    }
+    </script>
   </head>
 
   <body>
