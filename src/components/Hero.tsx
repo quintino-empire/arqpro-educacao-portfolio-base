@@ -25,12 +25,11 @@ const Hero = () => {
             >
               Ver projetos
             </button>
-            <a 
-              href="/contato" 
-              className="btn-secondary text-center"
+            <button 
+              className="btn-secondary"
             >
               Fale conosco
-            </a>
+            </button>
           </div>
         </div>
       </div>
